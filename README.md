@@ -1,121 +1,88 @@
+![Pixelhane logosu](pixelhane-icon.jpg)
+
 # ✦ PIXELHANE NEXUS V15 FULL
 
-**Pixelhane**, tek bir HTML dosyası üzerinden çalışan; mini oyun kütüphanesi, oyuncu ilerlemesi, profil özelleştirme, arkadaş özellikleri ve çok oyunculu modlar sunan tarayıcı tabanlı bir oyun merkezidir.
+**Pixelhane**, tarayıcıda çalışan mini oyun kütüphanesi ve oyuncu topluluğu arayüzüdür. Tek HTML dosyası üzerinden açılır; tek kişilik oyunlar, aynı cihazda parti oyunları, kodla katılınan çevrimiçi özel odalar, oyuncu profili ve AI asistan paneli içerir.
 
-🌐 **Canlı site:** https://pixelhane-07.web.app/  
-📦 **GitHub:** https://github.com/sarpozcan3507/Pixelhane
+- **Canlı site:** https://pixelhane-07.web.app/
+- **GitHub:** https://github.com/sarpozcan3507/Pixelhane
+- **Ana uygulama dosyası:** `index.html`
 
-> Proje şu anda tek HTML tabanlı bir uygulamadır. Kurulum veya derleme adımı gerektirmez; bazı çevrimiçi özellikler internet bağlantısına ve ilgili servislerin erişilebilir olmasına bağlıdır.
+> Bu README, paylaşılan mevcut Pixelhane `index.html` dosyasındaki arayüz ve kod temel alınarak hazırlanmıştır. Çevrimiçi servislerin canlı çalışması ayrıca test edilmelidir.
 
----
+## Özellikler
 
-## 🎮 Oyun kütüphanesi
+### Oyun kütüphanesi
 
-Pixelhane arayüzünde 98 oyunluk bir kütüphane bulunur. Oyunlar kategoriye göre filtrelenebilir, aranabilir ve sıralanabilir.
-
-Kategoriler:
-
-- 🧠 Zekâ ve mantık
-- ⚡ Refleks
-- 🔤 Kelime
-- 📚 Bilgi
-- 🃏 Kart oyunları
-- ♟️ Kutu oyunları
-- 🎉 Parti oyunları
-- 🧭 Strateji
-- 🚀 Macera
-- 🧩 Bulmaca
-- 🕹️ Arcade
-- 🎨 Yaratıcı oyunlar
+Arayüzde 98 oyunluk bir katalog gösterilir. Oyunlar arama, sıralama ve kategori filtreleriyle bulunabilir. Kategoriler zekâ, refleks, kelime, bilgi, kart, kutu, parti, strateji, macera, bulmaca, arcade ve yaratıcı oyunlardır.
 
 Örnek oyunlar: Sayı Avcısı, Taş Kâğıt Makas, Kelime Avcısı, Bilgi Arenası, Matematik Sprinti, Hafıza Laboratuvarı, Refleks Testi, XOX Düellosu, UNO Neon ve Pişti Arenası.
 
-Oyun kartlarının bir kısmı ortak mini oyun motorlarını kullanır; her kartın tamamen farklı bir oyun altyapısı olduğu varsayılmamalıdır.
+Katalogdaki her kart ayrı bir oyun motoru anlamına gelmez. Bazı oyunlar ortak mini oyun motorları veya sadeleştirilmiş kurallar kullanır.
 
-## 🏆 Oyuncu ilerlemesi
+### Oyun modları
 
-- Oyun tamamladıkça XP kazanma
-- Oyuncu seviyesi ve seviye ilerlemesi
-- Tamamlanan oyun ve kazanılan oyun istatistikleri
-- Kişisel rekorlar
-- Başarımlar
-- Son oynanan oyunların listesi
+- **Tek kişilik:** Desteklenen oyunları tek başına oyna ve XP kazan.
+- **Aynı cihazda:** Desteklenen oyunlarda 2–4 kişi sırayla aynı ekranda oynayabilir.
+- **Çevrimiçi özel oda:** Oyuncu/oda koduyla PeerJS üzerinden doğrudan bağlantı kurulur. Kodda senkronize oyun mantığı bulunan oyunlar çevrimiçi oynanabilir.
 
-Oyun istatistikleri tarayıcının `localStorage` alanında saklanır. Tarayıcı verileri temizlenirse veya farklı bir tarayıcı/cihaz kullanılırsa bu yerel ilerleme otomatik olarak taşınmaz.
+Bu sürümde genel otomatik eşleştirme (public matchmaking) sistemi yoktur. Bütün katalog oyunlarının çevrimiçi senkronize olduğu varsayılmamalıdır.
 
-## 👤 Profil ve sosyal özellikler
+### Oyuncu ilerlemesi
 
-- Oyuncu adı, avatar ve biyografi düzenleme
-- Çevrimiçi, uzakta, lobide, oyunda ve çevrimdışı durum seçenekleri
-- Profil rengi ve arka plan tasarımı seçme
-- Oyuncu kodunu kopyalama ve arkadaş ekleme
-- Doğrudan bağlantı kurulabilen arkadaşlarla mesajlaşma
+- XP, seviye, oyun ve galibiyet istatistikleri
+- Başarımlar, kişisel rekorlar ve son aktiviteler
+- Oyuncu adı, avatar, biyografi, durum, renk ve profil arka planı
+
+İlerleme ve sosyal verilerin önemli bölümü tarayıcının `localStorage` alanında tutulur. Bu veriler otomatik olarak başka cihaza taşınmaz; tarayıcı verileri silinirse kaybolabilir.
+
+### Profil, arkadaşlar ve kulüpler
+
+- Oyuncu kodu paylaşma ve arkadaş ekleme
+- Doğrudan bağlantı kurulabilen arkadaşlara mesaj gönderme
 - Mesajlara yanıt verme, tepki ekleme ve sabitleme
-- Kulüp oluşturma ve davet koduyla kulübe katılma
+- Kulüp oluşturma, davet koduyla katılma ve kulüp sohbeti arayüzü
 
-Profil, arkadaş ve kulüp bilgilerinin önemli bölümü bu tarayıcıda yerel olarak saklanır. Bu sürümde merkezi kullanıcı hesabı ve tüm cihazlar arasında çalışan genel bir arkadaş listesi bulunmaz. Çevrimiçi arkadaş bağlantıları PeerJS üzerinden doğrudan kurulur.
+Arkadaş listesi, profil ve kulüp verileri için bu HTML sürümünde merkezi, tüm cihazları kapsayan bir kullanıcı hesabı sistemi bulunmaz. Bazı veriler yereldir; gerçek zamanlı bağlantı yalnızca PeerJS bağlantısı kurulabilen oyuncular arasında çalışır.
 
-## 🌐 Oyun modları ve multiplayer
+### AI asistanı
 
-Desteklenen oyunlarda üç mod sunulur:
+AI panelinde sohbet ve kod sekmeleri bulunur. Mevcut kod, sohbet isteklerini Groq Chat Completions API adresine gönderir ve `openai/gpt-oss-20b` modelini kullanır. Bu özellik oyun motorlarının çalışması için gerekli değildir.
 
-1. **Tek kişilik:** Oyunu tek başına oyna ve kendi rekorunu geliştir.
-2. **Aynı cihazda:** Desteklenen oyunları 2–4 kişi sırayla, tek cihaz üzerinde oyna.
-3. **Çevrimiçi özel oda:** Oda/oyuncu koduyla başka bir oyuncuya doğrudan bağlan.
+**Güvenlik uyarısı:** Paylaşılan `index.html` dosyasında Groq API anahtarı doğrudan JavaScript koduna yazılmıştır. Tarayıcıda kullanılan veya herkese açık depoya konan anahtar gizli kalmaz. Dosyada bulunan eski anahtarı kullanmayın; Groq panelinden iptal edip yenisini oluşturun. Yeni anahtarı HTML'e, README dosyalarına veya herkese açık depoya eklemeyin. Güvenli kullanım için HTML'in sunucu tarafındaki bir API proxy/Edge Function'a istek gönderecek şekilde ayrıca güncellenmesi gerekir. Bu proxy mevcut tek HTML dosyasının parçası değildir; bu nedenle proxy kurulana kadar AI özelliği etkinleştirilmemelidir.
 
-Çevrimiçi bağlantıda PeerJS kullanılır. Bazı oyunlar için senkronize oyun motorları vardır; bütün oyunların çevrimiçi olarak aynı şekilde senkronize edildiği garanti edilmez. Bu sürümde herkese açık otomatik eşleştirme sistemi yoktur.
-
-## 🤖 AI asistanı
-
-Pixelhane'de oyun ekranından ayrı bir AI asistan paneli bulunur. Panelde sohbet ve kod sekmeleri vardır. Mevcut HTML sürümündeki sohbet isteği Groq API'sine gönderilir ve varsayılan model adı `openai/gpt-oss-20b` olarak ayarlanmıştır.
-
-AI özelliklerinin çalışması sağlayıcı API erişimine, geçerli bir API anahtarına, model kullanılabilirliğine ve sağlayıcının limitlerine bağlıdır. AI yanıtları oyunun kendisi veya multiplayer bağlantısı için gerekli değildir.
-
-## 🧰 Kullanılan teknolojiler
+## Kullanılan teknolojiler
 
 | Teknoloji | Kullanım |
 |---|---|
-| HTML | Uygulama yapısı |
-| CSS | Arayüz, düzen ve animasyonlar |
-| JavaScript | Oyunlar, profil, ilerleme ve etkileşimler |
-| `localStorage` | Yerel oyun ve profil verileri |
-| PeerJS 1.5.5 | Doğrudan oyuncu/oda bağlantıları |
+| HTML, CSS, JavaScript | Tek dosyalı web arayüzü ve oyun mantığı |
+| `localStorage` | Yerel profil, istatistik ve sosyal veriler |
+| PeerJS 1.5.5 | Oyuncular arasında doğrudan bağlantı ve özel odalar |
 | Supabase JavaScript v2 | Realtime presence bağlantısı |
-| Groq API | AI asistanı sohbet ve kod yanıtları |
+| Groq API | AI asistan sohbeti ve kod yanıtları |
 
-PeerJS ve Supabase istemcileri CDN üzerinden yüklenir. Bu nedenle ilk açılış ve çevrimiçi özellikler için internet bağlantısı gerekir.
+PeerJS ve Supabase istemcileri CDN üzerinden yüklenir. Bu nedenle ilk yükleme ve çevrimiçi özellikler için internet bağlantısı gerekir.
 
-## 🚀 Çalıştırma
+## Kurulum ve yayımlama
 
-### En kolay yöntem
+1. Depoyu ZIP olarak indirin veya `index.html` dosyasını alın.
+2. Yerel deneme için `index.html` dosyasını güncel bir tarayıcıda açın.
+3. Çevrimiçi özellikler için dosyayı HTTPS kullanan bir statik web barındırma hizmetinde yayımlayın.
+4. Supabase Realtime bağlantısı, PeerJS özel odaları ve Firebase Hosting adımları için aşağıdaki kurulum rehberini izleyin.
 
-Canlı siteyi tarayıcıda aç:
+Ayrıntılı yerel çalıştırma, GitHub Pages, Firebase Hosting, Supabase, PeerJS ve AI anahtarı güvenliği adımları için **[README-KURULUM.txt](README-KURULUM.txt)** dosyasına bakın.
 
-https://pixelhane-07.web.app/
+## Veri ve gizlilik notları
 
-### Kendi kopyanı çalıştırma
+- Bu sürümde Firebase Authentication veya klasik kullanıcı hesabı/giriş akışı bulunmaz.
+- Oyun istatistikleri ve profil verilerinin çoğu tarayıcıda yerel tutulur.
+- Supabase bağlantısı mevcut kodda Realtime presence amacıyla kullanılır; bu dosya tek başına merkezi profil/veritabanı senkronizasyonu kurmaz.
+- Supabase istemci tarafında yalnızca publishable/anon anahtar kullanılmalıdır. `service_role` veya Secret anahtarı HTML'e eklenmemelidir.
+- AI API anahtarını herkese açık HTML/JavaScript dosyasında tutmayın.
 
-1. GitHub deposunu ZIP olarak indir veya `index.html` dosyasını al.
-2. Dosyayı güncel bir tarayıcıda aç. Çevrimiçi özellikleri test etmek için HTTPS üzerinden yayımlanmış bir adres kullanman önerilir.
-3. Supabase Realtime veya AI asistanı gibi dış servisleri kullanacaksan ilgili proje ve API ayarlarının doğru olduğundan emin ol.
+## Proje görseli
 
-Bu sürüm tek HTML dosyasıdır; `package.json`, npm kurulumu veya bir derleme komutu gerektirmez.
-
-## 🔐 Güvenlik ve veri notları
-
-- Tarayıcıda saklanan veriler sunucu yedeği değildir.
-- Supabase publishable/anon anahtarı istemci tarafında kullanılabilir; veritabanı erişimi için doğru RLS ve kanal izinleri ayrıca yapılandırılmalıdır.
-- **Groq gibi özel API anahtarları HTML veya herkese açık GitHub deposunda tutulmamalıdır.** Tarayıcıya yazılan anahtar herkes tarafından görülebilir ve kullanılabilir. Anahtar sunucu tarafındaki bir Edge Function/proxy üzerinden saklanmalıdır.
-- Bir API anahtarı daha önce herkese açık HTML dosyasına eklendiyse sağlayıcı panelinden iptal edilip yenilenmelidir.
-- PeerJS ile doğrudan bağlantı, merkezi hesap sistemi veya genel bir güvenlik/denetim sunucusu anlamına gelmez.
-
-## 📱 Mobil uyumluluk
-
-Arayüz telefon ve masaüstü ekranlarına uyum sağlayacak şekilde tasarlanmıştır. Uygulama tarayıcıda çalışır. Android APK'ya dönüştürülmesi ayrı bir paketleme işlemidir; APK kullanmak, çevrimiçi özellikleri çevrimdışı hale getirmez.
-
-## 📌 Proje durumu
-
-Bu README, Pixelhane deposunda bulunmayan bir README.md dosyası için, mevcut `index.html` arayüzü ve kodunda görülen özellikler temel alınarak hazırlanmıştır. Çevrimiçi servislerin canlı yapılandırması ve her multiplayer oyunundaki senkronizasyon ayrıca test edilmelidir.
+`pixelhane-icon.jpg`, Pixelhane için hazırlanmış kare logodur. Görsel 512 × 512 piksel ve 1 MB sınırının altındadır; uygulama simgesi veya proje görseli olarak yüklenebilir.
 
 ---
 
