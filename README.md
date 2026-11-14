@@ -1,4 +1,3 @@
-![Pixelhane logosu](pixelhane-icon.jpg)
 
 # ✦ PIXELHANE NEXUS V15 FULL
 
